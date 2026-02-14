@@ -1,0 +1,88 @@
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  cursor: url("./images/pointer.png"), auto;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  background: #111;
+}
+
+#valentinePrompt {
+  display: none;
+  position: absolute;
+  top: calc(50% + 150px);
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 20;
+  width: min(90vw, 560px);
+}
+
+#valentineQuestion {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: clamp(24px, 4vw, 36px);
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+#promptActions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+#yesButton,
+#noButton {
+  background-color: #2d2dff;
+  border: 2px solid #2d2dff;
+  color: #fff;
+  cursor: pointer;
+  min-height: 50px;
+  padding: 0 24px;
+  font-size: 16px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease;
+  z-index: 21;
+}
+
+#yesButton:hover,
+#noButton:hover {
+  background-color: #1f1faa;
+  color: #eee;
+}
+
+#heartsContainer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 25;
+}
+
+.heart {
+  position: absolute;
+  bottom: -40px;
+  color: #ff4f81;
+  opacity: 0.95;
+  animation: floatUp 3s ease-in forwards;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.25);
+    opacity: 0;
+  }
+}
